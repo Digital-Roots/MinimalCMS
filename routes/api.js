@@ -2,8 +2,8 @@
 
 const express = require("express");
 const router = express.Router();
-const BlogPost = require('./models/post');
-const User = require('./models/user');
+const BlogPost = require('../models/post');
+const User = require('../models/user');
 
 //PARAME
 //User, Tags
@@ -80,7 +80,7 @@ router.get('/:usersId', function(req, res, next){
 
 //PREST Query
 //Indexis Queries
-rounter.get('/', function(req, res, next){
+router.get('/', function(req, res, next){
   BlogPost.find()
           .limit(10)
           .exec(function(err, post){
@@ -88,7 +88,7 @@ rounter.get('/', function(req, res, next){
             res.json(post);
           });
 });
-rounter.get('/:limit-:offset', function(req, res, next){
+router.get('/:limit-:offset', function(req, res, next){
   BlogPost.find()
           .limit(req.params.limit)
           .offset(req.params.offset)
@@ -97,4 +97,4 @@ rounter.get('/:limit-:offset', function(req, res, next){
             res.json(post);
           });
 });
-module.exports = api;
+module.exports = router;

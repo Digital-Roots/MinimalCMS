@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const mid = require('../middleware');
-const BlogPost = require('./models/post');
-const User = require('./models/user');
+const BlogPost = require('../models/post');
+const User = require('../models/user');
 const showdown  = require('showdown');
 const converter = new showdown.Converter();
 
@@ -18,7 +18,7 @@ router.param('userId', function(req, res, next, id){
   });
 });
 
-router.get("/:userId", mid.loggedIn function(req, res){
+router.get("/:userId", mid.loggedIn, function(req, res){
   res.json(req.userPosts)
 });
 
@@ -35,10 +35,12 @@ router.post("/:userId/new", mid.loggedIn, function(req, res){
   });
 });
 
-router.delete("/:userId/delete/:post", mid.loggedIn function(req, res){
+router.delete("/:userId/delete/:post", mid.loggedIn, function(req, res){
 
 });
 
 router.put("/:userId/edit/:post", mid.loggedIn, function(req, res){
 
 });
+
+module.exports = router;

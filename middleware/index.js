@@ -4,7 +4,7 @@ function loggedIn(req, res, next){
   }
   const err = new Error('must be logged in to view this page');
   err.status = 401;
-  return res.json(err)
+  return res.json(err);
 }
 
 module.exports.loggedIn = loggedIn;

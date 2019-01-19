@@ -67,6 +67,8 @@ app.use(function(err, req, res, next){
   });
 });
 
+const port = 5000;
+
 app.listen(port, function(){
   console.log('Express app listening on ', port);
 })

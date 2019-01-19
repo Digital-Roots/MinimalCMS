@@ -14,15 +14,8 @@ const UserSchema = new mongoose.Schema({
       type: String,
       requiried: true,
       trim: true,
-    },
-    set: fullName (name) {
-        let words = name.toString().split(' ');
-        this.first= words[0] || '';
-        this.last = words[1] || '';
-    },
-    get: fullName(){
-      return `${this.first} ${this.last}`;
-    },
+    }
+  },
   email:{
     type: String,
     requiried: true,
