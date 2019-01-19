@@ -16,9 +16,18 @@ const BlogPostSchema = new mongoose.Schema({
     type: Map,
     of: String
   },
-  authorId: [User.ObjectId],
-  author: [User.name],
-  auhtorContact: [User.socialContact]
+ authorId:{
+   type: String,
+   requiried: true
+ },
+  author:{
+    type: String,
+    requiried: true
+  },
+  auhtorContact:{
+    type: Map,
+    of: String
+  }
 });
 
 let BlogPost = mongoose.model('BlogPost', BlogPostSchema);

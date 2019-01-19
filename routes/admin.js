@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const router = express.Router();
 const BlogPost = require('../models/post');
@@ -12,7 +14,11 @@ router.post('/login', function(req, res, next) {
         return next(err);
       }  else {
         req.session.userId = user._id;
-          return res.redirect('/user/' + user._id);
+        req.userId = user._id;
+        req.userName = user.name;
+        req.userSocialContact = user.socialContact;
+
+          return res.json('/user/user._id');
         }
       });
   } else {

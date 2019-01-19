@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const router = express.Router();
 const mid = require('../middleware');
@@ -26,7 +28,10 @@ router.post("/:userId/new", mid.loggedIn, function(req, res){
   const newPost = new BlogPost({
     title: req.body.title,
     post: req.body.post,
-    tags: req.body.tags
+    tags: req.body.tags,
+    authorId: req.userId,
+    author: req.userName,
+    socialContact: req.userSocialContact
   });
   newPost.save(function(err, newPost){
     if(err) return next(err);
