@@ -1,0 +1,29 @@
+{
+  "name": "jamstackcms",
+  "version": "1.0.0",
+  "description": "RESTful CMS",
+  "main": "app",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "CMS",
+    "RESTful",
+    "API"
+  ],
+  "author": "Robert Edwardes",
+  "license": "ISC",
+  "engines": {
+    "node": "11.x"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.0",
+    "pug": "^2.0.3",
+    "showdown": "^1.9.0"
+  }
+}
